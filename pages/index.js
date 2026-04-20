@@ -8,7 +8,7 @@ const poems = [
   { number: '03', slug: 'still-water', title: 'STILL WATER', description: 'A modernist epic composed from unfavourable reviews of supermarket own-brand bottled water.' },
   { number: '04', slug: 'trumpd', title: "TRUMP'D", description: "The ballad of Donald J. Trump, told through the ever-evolving edits to his Wikipedia page." },
   { number: '05', slug: 'headlines', title: 'HEADLINES', description: "Today's news headlines paired with today's advertising headlines. Forever." },
-  { number: '06', slug: 'please-god', title: 'PLEASE GOD', description: 'A litany of real social media posts beginning with "please god", from across the world.' },
+  { number: '06', slug: 'please-god', title: 'PLEASE GOD', description: 'A litany of real social media posts beginning with \"please god\", from across the world.' },
 ]
 
 export default function Home() {
@@ -18,143 +18,81 @@ export default function Home() {
   useEffect(() => {
     const updateTime = () => {
       const now = new Date()
-      setTime(now.toUTCString().split(' ').slice(0, 5).join(' '))
+      setTime(now.toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric' }))
     }
     updateTime()
-    const interval = setInterval(updateTime, 1000)
+    const interval = setInterval(updateTime, 60000)
     return () => clearInterval(interval)
   }, [])
 
   return (
     <>
       <Head>
-        <title>POERMS, VOL. 1 — Henry Plumridge</title>
+        <title>POERMS, VOL. 1</title>
         <meta name="description" content="A collection of never-ending, self-generating poems." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap" rel="stylesheet" />
       </Head>
-
-      <main style={styles.main}>
-        <header style={styles.header}>
-          <span style={styles.headerLeft}>+ POERMS</span>
-          <span style={styles.headerCenter}>HENRY PLUMRIDGE</span>
-          <span style={styles.headerRight}>{time}</span>
-        </header>
-
-        <section style={styles.hero}>
-          <h1 style={styles.heroTitle}>POERMS, VOL. 1</h1>
-          <p style={styles.heroDesc}>
-            This is a collection of never-ending, self-generating poems. Each generates themselves using AI trained on source material and writing guidance. While the themes remain constant, each viewing will produce a different version of each poem.
-          </p>
+      <main style={s.main}>
+        <div style={s.topStrip}>
+          <span style={s.stripLeft}>POERMS *</span>
+          <span style={s.stripRight}>{time}</span>
+        </div>
+        <section style={s.hero}>
+          <div style={s.heroInner}>
+            <p style={s.vol}>VOL. 1</p>
+            <p style={s.heroBody}>
+              This is a collection of never-ending, self-generating poems.
+              Each generates themselves using AI trained on source material
+              and writing guidance. While the themes remain constant,
+              each viewing will produce a different version of each poem.
+            </p>
+            <p style={s.credit}>Henry Plumridge</p>
+          </div>
         </section>
-
-        <div style={styles.divider} />
-
-        <section style={styles.poemsList}>
+        <div style={s.rule} />
+        <section style={s.index}>
           {poems.map((poem, i) => (
             <Link
               key={poem.slug}
               href={`/poem/${poem.slug}`}
-              style={{
-                ...styles.poemRow,
-                ...(hoveredPoem === i ? styles.poemRowHovered : {}),
-              }}
+              style={{ ...s.row, ...(hoveredPoem === i ? s.rowHover : {}) }}
               onMouseEnter={() => setHoveredPoem(i)}
               onMouseLeave={() => setHoveredPoem(null)}
             >
-              <span style={styles.poemNumber}>{poem.number}</span>
-              <span style={styles.poemTitle}>{poem.title}</span>
-              <span style={styles.poemDesc}>{poem.description}</span>
-              <span style={styles.poemArrow}>→</span>
+              <span style={s.rowNum}>{poem.number}</span>
+              <span style={s.rowTitle}>{poem.title}</span>
+              <span style={s.rowDesc}>{poem.description}</span>
             </Link>
           ))}
         </section>
-
-        <footer style={styles.footer}>
-          <span style={styles.footerText}>
-            © HENRY PLUMRIDGE — POERMS, VOL. 1 — ALL POEMS SELF-GENERATING — ALL POEMS NEVER-ENDING
-          </span>
-        </footer>
+        <div style={s.bottomStrip}>
+          <span style={s.bottomText}>Henry Plumridge &nbsp;*&nbsp; POERMS, Vol. 1 &nbsp;*&nbsp; All poems self-generating &nbsp;*&nbsp; All poems never-ending</span>
+        </div>
       </main>
     </>
   )
 }
 
-const styles = {
-  main: {
-    minHeight: '100vh',
-    background: '#fff',
-    color: '#000',
-    display: 'flex',
-    flexDirection: 'column',
-    fontFamily: 'Archivo, Helvetica Neue, Helvetica, Arial, sans-serif',
-  },
-  header: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    padding: '18px 40px',
-    borderBottom: '1px solid #e0e0e0',
-    fontSize: '11px',
-    letterSpacing: '0.1em',
-    position: 'sticky',
-    top: 0,
-    background: '#fff',
-    zIndex: 100,
-    fontFamily: 'Archivo, Helvetica Neue, Helvetica, Arial, sans-serif',
-  },
-  headerLeft: { color: '#000', fontWeight: '500' },
-  headerCenter: { color: '#999' },
-  headerRight: { color: '#ccc' },
-  hero: {
-    padding: '80px 40px 60px',
-    maxWidth: '680px',
-    margin: '0 auto',
-    width: '100%',
-    textAlign: 'center',
-  },
-  heroTitle: {
-    fontFamily: 'Archivo, Helvetica Neue, Helvetica, Arial, sans-serif',
-    fontSize: '13px',
-    fontWeight: '500',
-    letterSpacing: '0.15em',
-    color: '#000',
-    marginBottom: '24px',
-    textTransform: 'uppercase',
-  },
-  heroDesc: {
-    fontFamily: 'Archivo, Helvetica Neue, Helvetica, Arial, sans-serif',
-    fontSize: '13px',
-    fontWeight: '300',
-    color: '#666',
-    lineHeight: '1.8',
-    letterSpacing: '0.01em',
-  },
-  divider: {
-    height: '1px',
-    background: '#e0e0e0',
-  },
-  poemsList: { flex: 1 },
-  poemRow: {
-    display: 'grid',
-    gridTemplateColumns: '48px 1fr 2fr 32px',
-    alignItems: 'center',
-    gap: '40px',
-    padding: '28px 40px',
-    borderBottom: '1px solid #f0f0f0',
-    textDecoration: 'none',
-    color: '#000',
-    transition: 'background 0.15s ease',
-    cursor: 'pointer',
-    fontFamily: 'Archivo, Helvetica Neue, Helvetica, Arial, sans-serif',
-  },
-  poemRowHovered: { background: '#fafafa' },
-  poemNumber: { fontSize: '11px', letterSpacing: '0.1em', color: '#ccc', fontWeight: '400' },
-  poemTitle: { fontSize: '15px', fontWeight: '500', letterSpacing: '0.05em', color: '#000' },
-  poemDesc: { fontSize: '12px', color: '#999', lineHeight: '1.6', letterSpacing: '0.01em', fontWeight: '300' },
-  poemArrow: { fontSize: '14px', color: '#ccc', textAlign: 'right' },
-  footer: { padding: '20px 40px', borderTop: '1px solid #f0f0f0', marginTop: 'auto' },
-  footerText: { fontSize: '10px', letterSpacing: '0.12em', color: '#ccc', fontFamily: 'Archivo, Helvetica Neue, Helvetica, Arial, sans-serif' },
+const s = {
+  main: { minHeight: '100vh', background: '#f5f2ee', color: '#111', display: 'flex', flexDirection: 'column', fontFamily: 'Archivo, Helvetica Neue, Helvetica, Arial, sans-serif' },
+  topStrip: { display: 'flex', justifyContent: 'space-between', padding: '12px 32px', borderBottom: '1px solid #d8d4ce', fontSize: '10px', letterSpacing: '0.18em', fontWeight: '400', color: '#111' },
+  stripLeft: {},
+  stripRight: { color: '#999' },
+  hero: { flex: '0 0 auto', padding: '80px 32px 72px' },
+  heroInner: { maxWidth: '480px' },
+  vol: { fontSize: '10px', letterSpacing: '0.2em', fontWeight: '400', color: '#999', marginBottom: '32px' },
+  heroBody: { fontSize: '13px', fontWeight: '300', lineHeight: '1.9', color: '#444', letterSpacing: '0.01em', marginBottom: '40px' },
+  credit: { fontSize: '10px', letterSpacing: '0.18em', fontWeight: '400', color: '#999' },
+  rule: { height: '1px', background: '#d8d4ce' },
+  index: { flex: 1 },
+  row: { display: 'grid', gridTemplateColumns: '40px 200px 1fr', alignItems: 'baseline', gap: '32px', padding: '22px 32px', borderBottom: '1px solid #e8e4df', textDecoration: 'none', color: '#111', transition: 'background 0.1s', cursor: 'pointer' },
+  rowHover: { background: '#eeebe6' },
+  rowNum: { fontSize: '10px', letterSpacing: '0.1em', color: '#bbb', fontWeight: '400', paddingTop: '2px' },
+  rowTitle: { fontSize: '13px', fontWeight: '500', letterSpacing: '0.08em', color: '#111' },
+  rowDesc: { fontSize: '12px', fontWeight: '300', color: '#888', lineHeight: '1.5', letterSpacing: '0.01em' },
+  bottomStrip: { padding: '12px 32px', borderTop: '1px solid #d8d4ce', marginTop: 'auto' },
+  bottomText: { fontSize: '10px', letterSpacing: '0.1em', color: '#bbb', fontWeight: '300' },
 }
