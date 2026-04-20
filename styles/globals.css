@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --off-white: #f0ece4;
+  --dim: #888888;
+  --accent: #c8b89a;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; scroll-behavior: smooth; }
+body { background: var(--black); color: var(--white); font-family: 'EB Garamond', Georgia, serif; min-height: 100vh; overflow-x: hidden; }
+::selection { background: var(--white); color: var(--black); }
+::-webkit-scrollbar { width: 1px; }
+::-webkit-scrollbar-track { background: var(--black); }
+::-webkit-scrollbar-thumb { background: var(--dim); }
