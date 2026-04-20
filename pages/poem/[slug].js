@@ -109,11 +109,11 @@ export default function PoemPage() {
 function getLineStyle(slug, line) {
   const base = { fontFamily: "'EB Garamond', Georgia, serif", fontSize: 'clamp(18px, 2.4vw, 26px)', lineHeight: '1.8', color: '#1a1a1a', marginBottom: '2px', letterSpacing: '0.01em' }
   if (slug === 'peace-by-piece') {
-    if (line === 'piece by piece') return { fontFamily: "'Jost', Helvetica, sans-serif", fontSize: '9px', letterSpacing: '0.3em', color: '#bbb', fontWeight: '300', marginBottom: '8px', marginTop: '8px' }
-    if (line === 'pieces, but no peace.') return { ...base, fontSize: 'clamp(14px,1.8vw,18px)', color: '#999', fontStyle: 'italic', marginTop: '20px', marginBottom: '48px' }
+    if (line === 'piece by piece') return { fontFamily: "'Jost', Helvetica, sans-serif", fontSize: '15px', letterSpacing: '0.3em', color: '#555', fontWeight: '300', marginBottom: '8px', marginTop: '8px' }
+    if (line === 'pieces, but no peace.') return { ...base, fontSize: 'clamp(14px,1.8vw,18px)', color: '#666', fontStyle: 'italic', marginTop: '20px', marginBottom: '48px' }
   }
   if (slug === 'please-god') {
-    if (line === 'please god') return { fontFamily: "'Jost', Helvetica, sans-serif", fontSize: '9px', letterSpacing: '0.35em', color: '#bbb', fontWeight: '200', marginBottom: '36px' }
+    if (line === 'please god') return { fontFamily: "'Jost', Helvetica, sans-serif", fontSize: '15px', letterSpacing: '0.35em', color: '#555', fontWeight: '200', marginBottom: '36px' }
     return { ...base, fontStyle: 'italic', fontSize: 'clamp(17px,2.2vw,24px)' }
   }
   if (slug === 'headlines') return { ...base, fontSize: 'clamp(16px,2vw,22px)', marginBottom: '20px' }
@@ -124,25 +124,25 @@ function getLineStyle(slug, line) {
 const s = {
   main: { minHeight: '100vh', background: '#f7f4f0', color: '#111', display: 'flex', fontFamily: "'Jost', 'Futura', 'Century Gothic', Helvetica, Arial, sans-serif" },
   spine: { width: '24px', minHeight: '100vh', borderRight: '1px solid #ddd', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, position: 'sticky', top: 0, height: '100vh' },
-  spineText: { writingMode: 'vertical-rl', textOrientation: 'mixed', transform: 'rotate(180deg)', fontSize: '8px', letterSpacing: '0.25em', fontWeight: '300', color: '#bbb', whiteSpace: 'nowrap' },
+  spineText: { writingMode: 'vertical-rl', textOrientation: 'mixed', transform: 'rotate(180deg)', fontSize: '14px', letterSpacing: '0.25em', fontWeight: '300', color: '#555', whiteSpace: 'nowrap' },
   content: { flex: 1, display: 'flex', flexDirection: 'column' },
-  topBar: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '14px 48px 14px 32px', borderBottom: '1px solid #e0dbd4', fontSize: '9px', letterSpacing: '0.25em', fontWeight: '300', position: 'sticky', top: 0, background: '#f7f4f0', zIndex: 100 },
-  back: { textDecoration: 'none', color: '#111', fontSize: '9px', letterSpacing: '0.25em', fontWeight: '400', fontFamily: "'Jost', Helvetica, sans-serif" },
-  stripNum: { color: '#bbb', fontSize: '9px', letterSpacing: '0.2em' },
-  regenBtn: { background: 'none', border: 'none', fontSize: '9px', letterSpacing: '0.25em', color: '#888', cursor: 'pointer', padding: 0, fontFamily: "'Jost', Helvetica, sans-serif", fontWeight: '300' },
+  topBar: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '14px 48px 14px 32px', borderBottom: '1px solid #e0dbd4', fontSize: '15px', letterSpacing: '0.25em', fontWeight: '300', position: 'sticky', top: 0, background: '#f7f4f0', zIndex: 100 },
+  back: { textDecoration: 'none', color: '#111', fontSize: '15px', letterSpacing: '0.25em', fontWeight: '400', fontFamily: "'Jost', Helvetica, sans-serif" },
+  stripNum: { color: '#555', fontSize: '15px', letterSpacing: '0.2em' },
+  regenBtn: { background: 'none', border: 'none', fontSize: '15px', letterSpacing: '0.25em', color: '#555', cursor: 'pointer', padding: 0, fontFamily: "'Jost', Helvetica, sans-serif", fontWeight: '300' },
   header: { padding: '64px 48px 48px 32px', maxWidth: '680px' },
-  headerNum: { fontSize: '9px', letterSpacing: '0.3em', color: '#bbb', marginBottom: '16px', fontWeight: '300' },
+  headerNum: { fontSize: '15px', letterSpacing: '0.3em', color: '#555', marginBottom: '16px', fontWeight: '300' },
   title: { fontFamily: "'Jost', 'Futura', Helvetica, sans-serif", fontSize: 'clamp(24px,4vw,48px)', fontWeight: '200', letterSpacing: '0.15em', lineHeight: '1.1', marginBottom: '24px', color: '#111', textTransform: 'uppercase' },
-  desc: { fontSize: '10px', fontWeight: '200', color: '#888', lineHeight: '1.8', letterSpacing: '0.05em', maxWidth: '360px' },
+  desc: { fontSize: '14px', fontWeight: '200', color: '#555', lineHeight: '1.8', letterSpacing: '0.05em', maxWidth: '360px' },
   rule: { height: '1px', background: '#e0dbd4', margin: '0 32px' },
   dataBar: { padding: '10px 48px 10px 32px', borderBottom: '1px solid #ece8e2' },
-  dataText: { fontSize: '9px', letterSpacing: '0.1em', color: '#bbb', fontWeight: '200' },
+  dataText: { fontSize: '15px', letterSpacing: '0.1em', color: '#555', fontWeight: '200' },
   body: { flex: 1, padding: '56px 48px 80px 32px', maxWidth: '720px' },
   loadingWrap: { paddingTop: '8px' },
-  loadingText: { fontSize: '9px', letterSpacing: '0.3em', color: '#ccc', fontWeight: '200', animation: 'blink 2s infinite' },
-  errorText: { fontSize: '10px', color: '#999', marginBottom: '16px', letterSpacing: '0.08em', fontWeight: '200' },
-  retryBtn: { background: 'none', border: '1px solid #ddd', fontSize: '9px', letterSpacing: '0.2em', color: '#888', padding: '8px 20px', cursor: 'pointer', fontFamily: "'Jost', Helvetica, sans-serif", fontWeight: '300' },
+  loadingText: { fontSize: '15px', letterSpacing: '0.3em', color: '#666', fontWeight: '200', animation: 'blink 2s infinite' },
+  errorText: { fontSize: '14px', color: '#666', marginBottom: '16px', letterSpacing: '0.08em', fontWeight: '200' },
+  retryBtn: { background: 'none', border: '1px solid #ddd', fontSize: '15px', letterSpacing: '0.2em', color: '#555', padding: '8px 20px', cursor: 'pointer', fontFamily: "'Jost', Helvetica, sans-serif", fontWeight: '300' },
   poemWrap: { maxWidth: '600px' },
   bottomNav: { padding: '20px 48px 20px 32px', borderTop: '1px solid #e0dbd4', marginTop: 'auto', display: 'flex', justifyContent: 'space-between' },
-  navLink: { fontSize: '9px', letterSpacing: '0.2em', color: '#888', textDecoration: 'none', fontWeight: '300' },
+  navLink: { fontSize: '15px', letterSpacing: '0.2em', color: '#555', textDecoration: 'none', fontWeight: '300' },
 }
