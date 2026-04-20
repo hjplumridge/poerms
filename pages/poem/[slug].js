@@ -100,7 +100,7 @@ export default function PoemPage() {
           </div>
         </div>
       </main>
-      <style jsx global>{\`@keyframes fadeDot { 0%,80%,100%{opacity:0} 40%{opacity:1} }\`}</style>
+      <style jsx global>{`@keyframes fadeDot { 0%,80%,100%{opacity:0} 40%{opacity:1} }`}</style>
     </>
   )
 }
