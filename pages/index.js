@@ -290,7 +290,7 @@ function TerminalApp() {
           <div id="t-ptitle" style={{fontSize:'clamp(22px,4vw,44px)',fontWeight:500,letterSpacing:'0.1em',marginBottom:'16px',lineHeight:1.1}} />
           <div id="t-pdesc" style={{color:'rgba(232,232,232,0.4)',fontWeight:300,fontSize:'clamp(11px,1.2vw,13px)',letterSpacing:'0.04em',maxWidth:'480px',lineHeight:1.75}} />
         </div>
-        <div id="t-pdata" style={{color:'rgba(232,232,232,0.22)',fontSize:'clamp(10px,1.1vw,11px)',letterSpacing:'0.08em',marginBottom:'clamp(28px,4vw,44px)',paddingTop:'14px',borderTop:'1px solid rgba(232,232,232,0.1)',fontWeight:300}} />
+        <div id="t-pdata" style={{color:'rgba(232,232,232,0.65)',fontSize:'clamp(12px,1.4vw,14px)',letterSpacing:'0.12em',marginBottom:'clamp(28px,4vw,44px)',paddingTop:'16px',paddingBottom:'16px',borderTop:'1px solid rgba(232,232,232,0.2)',borderBottom:'1px solid rgba(232,232,232,0.2)',fontWeight:400}} />
         <div id="t-pstatus" style={{fontSize:'clamp(11px,1.2vw,13px)',color:'rgba(232,232,232,0.25)',letterSpacing:'0.15em',fontWeight:300,marginBottom:'20px'}} />
         <div id="t-pbody" style={{maxWidth:'620px'}} />
         <div style={{display:'flex',justifyContent:'space-between',paddingTop:'40px',marginTop:'40px',borderTop:'1px solid rgba(232,232,232,0.1)',marginBottom:'60px',fontSize:'clamp(10px,1.1vw,12px)',letterSpacing:'0.13em',color:'rgba(232,232,232,0.35)'}}>
