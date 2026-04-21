@@ -230,7 +230,7 @@ function TerminalApp() {
       }
     })
     document.addEventListener('keydown', e => {
-      if (e.key==='Enter' && s.screen==='t-entry') goIndex()
+      if (e.key==='Enter' && (s.screen==='t-entry' || s.screen==='entry')) goIndex()
       if ((e.key==='Escape'||e.key==='Backspace') && s.screen==='t-poem') { s.abort=true; goIndex() }
     })
 
