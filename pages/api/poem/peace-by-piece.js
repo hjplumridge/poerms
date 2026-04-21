@@ -14,9 +14,7 @@ export default async function handler(req, res) {
   if (!apiKey) return res.status(500).json({error:'API key not configured'})
 
   const newExplosions = await getExplosions()
-  const launch = new Date('2024-01-01')
-  const days = Math.floor((new Date() - launch) / 86400000)
-  const total = days * 35 + newExplosions
+  const total = newExplosions
 
   const prompt = `You are generating the current state of PEACE BY PIECE — an anti-war poem that accumulates one syllable per recorded explosion worldwide since its launch.
 
@@ -56,7 +54,7 @@ Write the poem now. No title, no attribution.`
       body: JSON.stringify({model:'claude-sonnet-4-5',max_tokens:2000,messages:[{role:'user',content:'Generate the poem.'}],system:prompt})
     })
     const d = await r.json()
-    return res.status(200).json({poem: d.content[0].text, context: `${total.toLocaleString()} syllables accumulated — ${newExplosions} new events in last 24 hours`})
+    return res.status(200).json({poem: d.content[0].text, context: `${total} syllables — ${total} explosive events recorded in the last 24 hours`})
   } catch(e) {
     return res.status(500).json({error:'Failed to generate poem'})
   }
