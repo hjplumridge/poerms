@@ -18,7 +18,7 @@ export default function Home() {
 
 const POEMS = [
   { slug:'she-and-i', number:'01', title:'SHE&I', description:'A dramatic monologue in which a man\'s toxicity towards his ex rises and falls with the global stock market.', dataNote:'Toxicity level sourced from FTSE 100 daily performance.' },
-  { slug:'peace-by-piece', number:'02', title:'PEACE BY PIECE', description:'An anti-war poem that grows one syllable\nfor every real bomb detonated around the world.', dataNote:'Syllable count sourced from global conflict data.' },
+  { slug:'peace-by-piece', number:'02', title:'PEACE BY PIECE', description:'An anti-war poem that grows one syllable at a time with every real bomb detonated around the world.', dataNote:'Syllable count sourced from global conflict data.' },
   { slug:'still-water', number:'03', title:'STILL WATER', description:'A modernist epic composed from unfavourable\nreviews of supermarket own-brand bottled water.', dataNote:'Source material: real customer reviews, 3 stars and below.' },
   { slug:'trumpd', number:'04', title:"TRUMP'D", description:"The ballad of Donald J. Trump, told through\nthe ever-evolving edits to his Wikipedia page.", dataNote:"Source material: today's edits to Donald Trump's Wikipedia page." },
   { slug:'headlines', number:'05', title:'HEADLINES', description:"Today's news headlines paired with\ntoday's advertising headlines. Forever.", dataNote:'Source material: live RSS news feeds and real advertising headlines.' },
