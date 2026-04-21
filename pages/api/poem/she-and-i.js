@@ -17,11 +17,63 @@ export default async function handler(req, res) {
   const level = pct <= -3 ? 1 : pct <= -1 ? 2 : pct <= 1 ? 3 : pct <= 3 ? 4 : 5
 
   const levelDescs = {
-    1: `LEVEL 1 — EMBRYONIC TOXICITY. Sentences lurch between long losing clauses and sudden staccato drops. She exists only as the cause of his current condition — no interiority, action only, reported flatly. He self-flagellates rather than self-justifies, folding inward into self-pity. The bitterness toward her wears the costume of bitterness toward himself. Verbal tics: I just, I don't know, forget it, it doesn't matter. The almost-insight arrives when the waitress passes and something in him briefly redirects — a sharpness, a comment slightly too much.`,
-    2: `LEVEL 2 — The self-pity has steadied into construction. Sentences reach a point then add a clause to soften — which I get, I do get that. He has appointed himself reliable narrator of her interior life. The self-justification is performed fairness: small concessions always followed by but. Verbal tics: to be fair, in fairness, I'm not saying that, look. The almost-insight: he describes what she was feeling during a specific argument in such fluent settled detail that the description briefly exposes its own impossibility.`,
-    3: `LEVEL 3 — BASELINE. The most dangerous level because it is the most ordinary. Medium sentences, conversational rhythm, you know performing self-awareness without achieving it. She is pure pronoun — she, without weight — appearing only as weather. He arranges facts in an order that makes the case for him, and the arrangement is invisible to him. Verbal tics: to be fair, whatever, it is what it is. The almost-insight: one sentence starts — and I know I wasn't always — then anyway. The anyway is the tell.`,
-    4: `LEVEL 4 — Sentences shorter, sharper. Qualifications become reflex: fair enough, whatever, look. She is a category now, a type. He inventories her — specificity not intimacy but counting. Assertion replaces argument: I was patient. More than patient. Most people wouldn't have. Verbal tics: honestly, genuinely, I'm telling you, that's just the truth of it. The almost-insight: a detail surfaces and he covers it immediately — she was — anyway, that's not the point.`,
-    5: `LEVEL 5 — MAXIMUM TOXICITY. Sentences short, grammatically immaculate, eerie in their completeness. Degradation worn as pub talk — banter that no longer stays below the threshold of the unacceptable. High-maintenance. Didn't really know what she wanted. You know what they're like. Speaks warmly boastfully about the physical and sexual dimensions — ownership recounted with satisfaction. The almost-insight: lets slip slightly too much familiarity with her recent life — something known in too much detail to be guesswork. Never said. Only gettable.`
+    1: `MARKET DOWN SHARPLY. He is in the powerless, self-pitying register of toxic masculinity. 
+This is not vulnerability — it is victimhood weaponised. He has cast himself as the wronged party 
+and cannot see past it. His sentences fracture and restart. He cannot maintain a thought without 
+it curling back to his own suffering. She exists only as the thing that caused his pain — no 
+interiority, no complexity, just actions she took that he is still prosecuting. He oscillates 
+between self-flagellation and sudden flashes of contempt or suspicion — were there other men? 
+He deflects his aggression sideways: a comment about the waitress, irritation at his drink, 
+something muttered about someone across the bar. He performs being fine and fails immediately. 
+Specific language patterns: I just — , forget it, it doesn't matter, no I'm fine, she had a way 
+of, I don't know why I'm even, I mean it's not like I, were there — actually don't answer that.
+The toxicity here is the refusal to grant her any interior life even while claiming to be destroyed 
+by losing her. She ruined him but she is not real enough to have meant to.`,
+
+    2: `MARKET SLIGHTLY DOWN. He has steadied but he is building a case. The self-pity has 
+organised itself into argument. He is performing reasonableness — small concessions, balanced 
+framing — but every concession is a setup for a reversal. He has decided what she was: needy, 
+inconsistent, difficult to read. He states her psychology with confidence he hasn't earned. 
+He was patient. He gave her time. He tried to understand. The specific manipulation tactic here 
+is DARVO — deny, attack, reverse victim and offender — expressed conversationally, not consciously. 
+He is not lying. He believes everything he says. Language patterns: to be fair, I'm not saying 
+she was, I tried to be, look I get that she had her stuff, but there comes a point, honestly 
+I think she knew exactly what she was doing, which I get, I do get that, but still.
+He talks about what she needed as though her needs were a personal inconvenience directed at him.`,
+
+    3: `MARKET FLAT. THE MOST DANGEROUS REGISTER. He sounds like someone you know. He sounds 
+reasonable. He might even sound self-aware — but the self-awareness is performed, not real. 
+This is covert narcissism in its natural habitat: the guy at the pub who seems fine, who seems 
+like he's moved on, who makes one small comment that you almost miss. He minimises what happened 
+("it just fizzled"), takes credit for the ending ("I ended it, which was the right call"), 
+erases her agency ("she didn't really know what she wanted"), and monitors his own image obsessively 
+while appearing not to. The tell is the things he almost says and doesn't. The sentence that stops. 
+The "anyway." Language patterns: it is what it is, these things happen, I'm fine honestly, 
+I think we both knew, to be fair to her, no she's fine I'm sure, I've moved on, I've got my eye on—`,
+
+    4: `MARKET UP. Power returning. The register shifts from argument to assertion. He no longer 
+needs to justify himself — he states. She becomes a category, a type, a case study in female 
+behaviour that he can explain to his friend with authority. His language becomes instructional: 
+some girls are just like that, you know how it is, that's what they do. He inventories her flaws 
+with the specificity of someone who has been rehearsing. His contempt is now relaxed — not hot 
+anger but the cool dismissal of someone who feels he has won. He mentions other women casually, 
+as proof of his own desirability. Language patterns: honestly, I'm telling you, most guys would 
+have, she was high-maintenance — not in a bad way but, I was more than patient, you know what 
+they're like, genuinely, I could have — anyway, that's not the point.`,
+
+    5: `MARKET STRONGLY UP. MAXIMUM POWER, MAXIMUM TOXICITY. He is not angry. That is what makes 
+this version most disturbing. He is comfortable. He owns the story. She has been reduced to a 
+body and a function — he speaks about the physical and sexual relationship with warmth and 
+proprietorial satisfaction, as though reporting on something that still belongs to him. 
+He degrades her in the register of banter — the kind of thing men say in pubs that is technically 
+a joke but isn't. He is generous about her looks, dismissive about everything else. He knows 
+too much about what she is doing now — her Instagram, who she has been seen with, something 
+her friend apparently said — and he reports this information with the ease of someone who has 
+been watching without admitting he has been watching. The sexual bragging is specific. The 
+contempt is fluent. He feels untouchable. Language patterns: trust me, bro, I could text her 
+right now and she'd, she needs the validation — they all do, she looked incredible but God, 
+you know what the sex was like after a row, she'd come back tomorrow if I wanted, 
+see this? — she's been around it.`
   }
 
   const examples = {
@@ -43,8 +95,19 @@ THE EX: Always she — never named. No exceptions.
 TOXICITY LEVEL ${level}/5 (FTSE ${pct >= 0 ? '+' : ''}${pct.toFixed(2)}%):
 ${levelDescs[level]}
 
-MATCH THIS VOICE EXACTLY:
+THE VOICE AT THIS LEVEL — study the syntax, rhythm, dialect, and specific verbal patterns below. 
+Do not copy the content. Inhabit the music. This man's toxicity must be audible, not labelled:
 ${examples[level]}
+
+CRITICAL: The toxicity must be HEARD, not described. The reader should feel uncomfortable, 
+not informed. Every line must sound like something a real man actually said.
+Real phrases toxic men use — draw from these registers:
+- Ownership: "she's been around it", "she'd come back", "I could text her right now"  
+- Dismissal: "high-maintenance", "didn't know what she wanted", "you know what they're like"
+- False balance: "I'm not saying she was bad but", "to be fair to her", "I tried"
+- Victimhood: "I gave her everything", "I don't know what more she wanted", "after everything I did"
+- Surveillance disguised as indifference: knowing too much about her current life without 
+  acknowledging he has been watching
 
 PROHIBITIONS: No poetic diction. No clichés. No introspective vocabulary (toxic, trauma, boundaries, emotionally banned). No grief imagery (hearts, wounds, emptiness, darkness). No woman-as-mystery clichés. No financial language. Speaker never aware he is in a poem. No author's judgment — every word is his.
 
