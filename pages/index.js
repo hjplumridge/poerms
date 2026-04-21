@@ -271,7 +271,7 @@ function TerminalApp() {
       <div id="t-index" className="t-screen" style={{...base}}>
         <div style={{marginBottom:'clamp(28px,4vw,48px)',paddingBottom:'20px',borderBottom:'1px solid rgba(232,232,232,0.15)'}}>
           <div style={{fontSize:'clamp(14px,1.8vw,18px)',fontWeight:500,letterSpacing:'0.12em',marginBottom:'8px'}}>POERMS, VOL. 1</div>
-          <div style={{color:'rgba(232,232,232,0.35)',fontWeight:300,fontSize:'clamp(11px,1.2vw,13px)',letterSpacing:'0.08em'}}>Henry Plumridge &nbsp;*&nbsp; Select a poem</div>
+          <div style={{color:'rgba(232,232,232,0.35)',fontWeight:300,fontSize:'clamp(11px,1.2vw,13px)',letterSpacing:'0.08em'}}>Henry Plumridge</div>
         </div>
         <div id="t-list" />
       </div>
