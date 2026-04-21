@@ -31,13 +31,32 @@ export default async function handler(req, res) {
   const newExplosions = await getExplosions()
   const total = newExplosions
 
+  // Helper to count syllables approximately
+  function countSyllables(text) {
+    return text.toLowerCase()
+      .replace(/[^a-z]/g, ' ')
+      .split(/\s+/)
+      .filter(w => w.length > 0)
+      .reduce((acc, word) => {
+        const matches = word.match(/[aeiouy]+/g)
+        return acc + (matches ? matches.length : 1)
+      }, 0)
+  }
+
   const prompt = `You are generating the current state of PEACE BY PIECE — an anti-war poem that accumulates one syllable per recorded explosion worldwide since its launch.
 
 CURRENT SYLLABLE COUNT: ${total} (${newExplosions} new events in last 24 hours)
 
-FORM: A list of images. One image per line. No refrains, no stanza breaks, no closing lines. 
-Just the pieces. No capitals anywhere — not even proper nouns. 
-Write ${Math.max(8, Math.floor(Math.min(total,400)/5))} lines.
+FORM: A list of images. One image per line. No refrains, no stanza breaks.
+No capitals anywhere — not even proper nouns.
+
+TARGET: The poem must be exactly ${total} syllables long — not approximately, exactly.
+Count every syllable as you write. Stop when you reach ${total} syllables.
+The final line is always: pieces, but no peace. (5 syllables)
+So write images totalling ${total - 5} syllables, then end with: pieces, but no peace.
+
+Write short, spare lines — typically 4 to 8 syllables each.
+Each line is one concrete image. No line should exceed 10 syllables.
 
 EACH LINE is a single concrete image of contemporary conflict and its aftermath — 
 civilian life interrupted, infrastructure broken, the small specific details that 
@@ -75,7 +94,7 @@ Write the poem now. No title, no attribution.`
       body: JSON.stringify({model:'claude-sonnet-4-5',max_tokens:2000,messages:[{role:'user',content:'Generate the poem.'}],system:prompt})
     })
     const d = await r.json()
-    return res.status(200).json({poem: d.content[0].text, context: `${total} syllables — ${total} explosive events recorded in the last 24 hours`})
+    return res.status(200).json({poem: d.content[0].text, context: `${total} explosive events in the last 24 hours — ${total} syllables`})
   } catch(e) {
     return res.status(500).json({error:'Failed to generate poem'})
   }
