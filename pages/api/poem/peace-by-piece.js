@@ -49,6 +49,8 @@ No heroism, no nobility, no redemption, no resolution.
 No explanation of what the images mean. No capitals anywhere.
 The poem does not tell the reader what to feel. It shows them what happened.
 
+The final line is always, exactly: pieces, but no peace.
+
 Write the poem now. No title, no attribution.`
 
   try {
