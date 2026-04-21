@@ -99,8 +99,20 @@ THE VOICE AT THIS LEVEL — study the syntax, rhythm, dialect, and specific verb
 Do not copy the content. Inhabit the music. This man's toxicity must be audible, not labelled:
 ${examples[level]}
 
-CRITICAL: The toxicity must be HEARD, not described. The reader should feel uncomfortable, 
-not informed. Every line must sound like something a real man actually said.
+CRITICAL INSTRUCTION: You are not writing about a toxic man. You are being him. 
+There is no author in this poem. Every single word is chosen by him, for his reasons, 
+in his register. The toxicity is never named, never signalled, never demonstrated. 
+It simply IS — in what he chooses to say, what he chooses not to say, the order he says 
+things in, and the tiny moments where the mask slips and he doesn't notice.
+
+The reader should finish this poem feeling slightly unsettled without being able to say exactly why.
+Not: "this man is clearly toxic" — but: "wait, something was wrong there."
+
+At Level 3 specifically: this man sounds completely fine. He sounds like someone you'd have 
+a pint with. The toxicity is STRUCTURAL — it lives in what he omits, how he frames things, 
+the subtle ways he positions himself as reasonable while erasing her completely.
+He doesn't raise his voice. He never says anything you could directly object to.
+And yet.
 Real phrases toxic men use — draw from these registers:
 - Ownership: "she's been around it", "she'd come back", "I could text her right now"  
 - Dismissal: "high-maintenance", "didn't know what she wanted", "you know what they're like"
