@@ -20,30 +20,34 @@ export default async function handler(req, res) {
 
 CURRENT SYLLABLE COUNT: ${total} (${newExplosions} new events in last 24 hours)
 
-FORM: Built around the refrain 'piece by piece' on its own line. Each stanza has exactly four 'piece by piece' refrains with free verse images between them. Every stanza closes with: 'pieces, but no peace.' No capitals anywhere — not even proper nouns. Write ${Math.max(2, Math.floor(Math.min(total,400)/60))} complete stanzas.
+FORM: A list of images. One image per line. No refrains, no stanza breaks, no closing lines. 
+Just the pieces. No capitals anywhere — not even proper nouns. 
+Write ${Math.max(8, Math.floor(Math.min(total,400)/5))} lines.
 
-EXAMPLE (match this exactly):
-piece by piece
-bombs blast roads, supermarkets, schools
-piece by piece
-debris floats in lakes, rivers, swimming pools
-piece by piece
-a man picks his skeleton up from the floor
-piece by piece
-he hobbles home
+EACH LINE is a single concrete image of contemporary conflict and its aftermath — 
+civilian life interrupted, infrastructure broken, the small specific details that 
+don't make the headline but are what war actually is.
 
-pieces, but no peace.
+The images must vary in register — some devastating, some mundane, some both at once. 
+Not every line should try to be the most powerful line. The power comes from accumulation.
 
-piece by piece
-civil defence warnings are issued
-piece by piece
-rich expats fly to a place they've renamed 'home'
-piece by piece
+EXAMPLE (match this register exactly):
+shoes line up outside the morgue in descending sizes
+a dog waits at a bus stop that no longer exists
+someone films the smoke plume on their phone
+the hospital generator runs dry at 3am
+an apartment building develops new windows it didn't plan for
+rich expats fly to a place they've renamed home
 glasses clink in western government buildings
+a child's backpack hangs from a telephone wire
+the grocery store checkout scanner beeps in the rubble
+a grandmother counts her grandchildren twice, then three times
 
-pieces, but no peace.
-
-RULES: Contemporary violence only — no historical war imagery. No poppies, trenches, mud, dog tags. Every image must be capable of appearing in a news report today: supermarkets, smartphones, civil defence apps, satellite imagery. No heroism, no nobility, no redemption, no resolution. No capitals anywhere.
+RULES: Contemporary violence only. No poppies, trenches, mud, dog tags, uniforms. 
+Every image must be capable of appearing in a news report today. 
+No heroism, no nobility, no redemption, no resolution. 
+No explanation of what the images mean. No capitals anywhere.
+The poem does not tell the reader what to feel. It shows them what happened.
 
 Write the poem now. No title, no attribution.`
 
